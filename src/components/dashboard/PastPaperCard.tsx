@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { Flame, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const PastPaperCard = () => {
+  const navigate = useNavigate();
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -39,6 +42,7 @@ export const PastPaperCard = () => {
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          onClick={() => navigate("/quiz")}
           className="btn-glossy mt-6 self-start flex items-center gap-2 px-6 py-3 
                      bg-white/20 backdrop-blur-sm rounded-2xl text-white font-semibold
                      border border-white/30 hover:bg-white/30 transition-colors"
